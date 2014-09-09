@@ -176,7 +176,7 @@ Imports should be grouped in the following order:
 2. related third party imports
 3. local application/library specific imports
 
-Put a blank line between each group of imports.  The imports in each
+Put a line of '-' characters between each group of imports.  The imports in each
 group should be sorted alphabetically, by module name.
 
 Always use explicit import lists or `qualified` imports for standard
