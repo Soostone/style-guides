@@ -25,6 +25,7 @@ of the code and indent the definitions in a `where` clause 2 spaces. Usually we
 indent guards two spaces. Some examples:
 
 ~~~~~~~~ {.haskell}
+------------------------------------------------------------------------------
 -- | Reads the user's name and prints a greeting to stdout.
 sayHello :: IO ()
 sayHello = do
@@ -33,6 +34,7 @@ sayHello = do
   where
     greeting name = "Hello, " ++ name ++ "!"
 
+------------------------------------------------------------------------------
 -- | 'filter', applied to a predicate and a list, returns the list of
 -- those elements that satisfy the predicate; i.e.,
 --
@@ -70,7 +72,7 @@ each argument on separate lines and they should be indented four spaces.
 
 ### Blank Lines
 
-Two blank lines between top-level definitions, and a line of "-"
+Two blank lines between top-level definitions, and a line of 78 "-"
 characters to delineate top-level definitions from each other.  No blank lines between
 type signatures and function definitions.  Add one blank line between
 functions in a type class instance declaration if the functions bodies
@@ -201,6 +203,7 @@ and provide a type signature; use Haddock syntax in the comments.
 Comment every exported data type.  Some examples:
 
 ~~~~~~~~ {.haskell}
+------------------------------------------------------------------------------
 -- | Send a message on a socket.  The socket must be in a connected
 -- state.  Returns the number of bytes sent.  Applications are
 -- responsible for ensuring that all data has been sent.
@@ -209,6 +212,8 @@ send
     -> ByteString  -- ^ Data to send
     -> IO Int      -- ^ Bytes sent
 
+
+------------------------------------------------------------------------------
 -- | Bla bla bla.
 data Person = Person
     { age  :: Int     -- ^ Age
