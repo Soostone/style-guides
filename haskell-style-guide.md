@@ -6,7 +6,12 @@ guide.](https://github.com/snapframework/snap-website/blob/master/snaplets/heist
 
 This document describes coding and comment style for the Soostone projects.
 When something isn't covered by this guide you should stay consistent with the
-style used in our existing code.
+style used in our existing code.  The overall goal here is that code be easy
+to read.  This means the coding style should be driven by broader guidelines
+for good visual design.  See
+[http://www.visualmess.com/index.html](http://www.visualmess.com/index.html)
+for more detail about how seemingly small things like alignment help improve
+readability.
 
 1. Formatting
 -------------
