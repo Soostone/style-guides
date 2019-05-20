@@ -108,7 +108,7 @@ data HttpException
     | MissingContentHeader
 ~~~~~~~~
 
-Format records as follows:
+Format records as follows (but see below for the naming convention):
 
 ~~~~~~~~ {.haskell}
 data Person = Person
@@ -116,6 +116,18 @@ data Person = Person
     , lastName  :: String  -- ^ Last name
     , age       :: Int     -- ^ Age
     } deriving (Eq, Show)
+~~~~~~~~
+
+### Records
+
+To prevent record fields clashing as well as creating self-documenting functions, prefix record fields with the value constructor's name or abbreviated name:
+
+~~~~~~~~ {.haskell}
+data AppConfig = AppConfig {
+      _acAppName    :: Text
+    , _acLog        :: Severity
+    , _acSqlitePath :: Maybe FilePath
+    }
 ~~~~~~~~
 
 ### Pragmas
