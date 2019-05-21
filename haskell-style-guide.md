@@ -120,13 +120,13 @@ data Person = Person
 
 ### Records
 
-To prevent record fields clashing as well as creating self-documenting functions, prefix record fields with the value constructor's name or abbreviated name:
+To prevent record fields clashing as well as creating self-documenting functions, prefix record fields with the value constructor's name:
 
 ~~~~~~~~ {.haskell}
 data AppConfig = AppConfig {
-      _acAppName    :: Text
-    , _acLog        :: Severity
-    , _acSqlitePath :: Maybe FilePath
+      _appConfig_appName    :: Text
+    , _appConfig_log        :: Severity
+    , _appConfig_sqlitePath :: Maybe FilePath
     }
 ~~~~~~~~
 
