@@ -34,8 +34,8 @@ indent guards two spaces. Some examples:
 -- | Reads the user's name and prints a greeting to stdout.
 sayHello :: IO ()
 sayHello = do
-    name <- getLine
-    putStrLn $ greeting name
+  name <- getLine
+  putStrLn $ greeting name
   where
     greeting name = "Hello, " ++ name ++ "!"
 
@@ -59,14 +59,14 @@ follows:
 
 ~~~~~~~~ {.haskell}
 reallyLongFunctionName
-    :: (MonadIO m, MonadSnap m)
-    => (Handler LongType LongerType ()
-        -> Handler LongType LongerType a
-        -> Handler b v a)
-    -> (Text -> Text -> Text)
-    -> Text
-    -> Text
-    -> m ()
+  :: (MonadIO m, MonadSnap m)
+  => (Handler LongType LongerType ()
+      -> Handler LongType LongerType a
+      -> Handler b v a)
+  -> (Text -> Text -> Text)
+  -> Text
+  -> Text
+  -> m ()
 reallyLongFunctionName = undefined
 ~~~~~~~~
 
@@ -103,8 +103,8 @@ For long type names the following formatting is also acceptable:
 
 ~~~~~~~~ {.haskell}
 data HttpException
-    = HttpException_InvalidStatusCode Int
-    | HttpException_MissingContentHeader
+  = HttpException_InvalidStatusCode Int
+  | HttpException_MissingContentHeader
 ~~~~~~~~
 
 Data constructors of sum types have to be prefixed with their type constructor,
@@ -114,10 +114,10 @@ Format records as follows (but see below for the naming convention):
 
 ~~~~~~~~ {.haskell}
 data Person = Person
-    { firstName :: String  -- ^ First name
-    , lastName  :: String  -- ^ Last name
-    , age       :: Int     -- ^ Age
-    } deriving (Eq, Show)
+  { firstName :: String  -- ^ First name
+  , lastName  :: String  -- ^ Last name
+  , age       :: Int     -- ^ Age
+  } deriving (Eq, Show)
 ~~~~~~~~
 
 ### Records
@@ -126,10 +126,10 @@ To prevent record fields clashing as well as creating self-documenting functions
 
 ~~~~~~~~ {.haskell}
 data AppConfig = AppConfig {
-      _appConfig_appName    :: Text
-    , _appConfig_log        :: Severity
-    , _appConfig_sqlitePath :: Maybe FilePath
-    }
+  _appConfig_appName    :: Text
+  , _appConfig_log        :: Severity
+  , _appConfig_sqlitePath :: Maybe FilePath
+  }
 ~~~~~~~~
 
 ### Pragmas
@@ -148,8 +148,8 @@ the type it applies to.  Example:
 
 ~~~~~~~~ {.haskell}
 data Array e = Array
-    {-# UNPACK #-} !Int
-    !ByteArray
+  {-# UNPACK #-} !Int
+  !ByteArray
 ~~~~~~~~
 
 ### Hanging Lambdas
@@ -175,15 +175,15 @@ Format export lists as follows:
 
 ~~~~~~~~ {.haskell}
 module Data.Set
-    (
-      -- * The @Set@ type
-      Set
-    , empty
-    , singleton
+  (
+    -- * The @Set@ type
+    Set
+  , empty
+  , singleton
 
-      -- * Querying
-    , member
-    ) where
+    -- * Querying
+  , member
+  ) where
 ~~~~~~~~
 
 2. Imports
@@ -227,17 +227,17 @@ Comment every exported data type.  Some examples:
 -- state.  Returns the number of bytes sent.  Applications are
 -- responsible for ensuring that all data has been sent.
 send
-    :: Socket      -- ^ Connected socket
-    -> ByteString  -- ^ Data to send
-    -> IO Int      -- ^ Bytes sent
+  :: Socket      -- ^ Connected socket
+  -> ByteString  -- ^ Data to send
+  -> IO Int      -- ^ Bytes sent
 
 
 ------------------------------------------------------------------------------
 -- | Bla bla bla.
 data Person = Person
-    { age  :: Int     -- ^ Age
-    , name :: String  -- ^ First name
-    }
+  { age  :: Int     -- ^ Age
+  , name :: String  -- ^ First name
+  }
 ~~~~~~~~
 
 For functions the documentation should give enough information to
@@ -250,8 +250,8 @@ comments for data type definitions.  Some examples:
 
 ~~~~~~~~ {.haskell}
 data Parser = Parser
-    Int         -- Current position
-    ByteString  -- Remaining input
+  Int         -- Current position
+  ByteString  -- Remaining input
 
 foo :: Int -> Int
 foo n = salt * 32 + 9
