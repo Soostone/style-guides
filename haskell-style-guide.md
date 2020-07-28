@@ -24,7 +24,7 @@ Maximum line length is *78 characters*.
 
 #### Code
 
-Tabs are illegal. Use spaces for indenting.  Indent your code blocks with *4
+Tabs are illegal. Use spaces for indenting.  Indent your code blocks with *2
 spaces*.  Indent the `where` keyword two spaces to set it apart from the rest
 of the code and indent the definitions in a `where` clause 2 spaces. Usually we
 indent guards two spaces. Some examples:
@@ -101,12 +101,14 @@ data Tree a = Branch a (Tree a) (Tree a)
 
 For long type names the following formatting is also acceptable:
 
-
 ~~~~~~~~ {.haskell}
 data HttpException
-    = InvalidStatusCode Int
-    | MissingContentHeader
+    = HttpException_InvalidStatusCode Int
+    | HttpException_MissingContentHeader
 ~~~~~~~~
+
+Data constructors of sum types have to be prefixed with their type constructor,
+as shown above.
 
 Format records as follows (but see below for the naming convention):
 
