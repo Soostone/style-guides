@@ -95,8 +95,8 @@ a binary operator.  Don't insert a space after a lambda.
 Vertically align the constructors in a data type definition.  Example:
 
 ~~~~~~~~ {.haskell}
-data Tree a = Branch a (Tree a) (Tree a)
-            | Leaf
+data Tree a = Tree_Branch a (Tree a) (Tree a)
+            | Tree_Leaf
 ~~~~~~~~
 
 For long type names the following formatting is also acceptable:
@@ -104,17 +104,20 @@ For long type names the following formatting is also acceptable:
 
 ~~~~~~~~ {.haskell}
 data HttpException
-    = InvalidStatusCode Int
-    | MissingContentHeader
+    = HttpException_InvalidStatusCode Int
+    | HttpException_MissingContentHeader
 ~~~~~~~~
+
+Notice how our convention is to prefix the full record type in
+constructors for these enum/sum-type style data types.
 
 Format records as follows (but see below for the naming convention):
 
 ~~~~~~~~ {.haskell}
 data Person = Person
-    { firstName :: String  -- ^ First name
-    , lastName  :: String  -- ^ Last name
-    , age       :: Int     -- ^ Age
+    { person_firstName :: String  -- ^ First name
+    , person_lastName  :: String  -- ^ Last name
+    , person_age       :: Int     -- ^ Age
     } deriving (Eq, Show)
 ~~~~~~~~
 
